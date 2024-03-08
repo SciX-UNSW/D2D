@@ -1,3 +1,15 @@
+import numpy as np
+import pandas as pd
+import xarray as xr
+import seaborn as sns
+from ipywidgets import interact
+import matplotlib.pyplot as plt
+from IPython.display import display, Markdown
+from matplotlib.animation import FuncAnimation
+from scipy.stats import norm, binned_statistic
+from matplotlib.lines import Line2D
+
+sns.set_context('poster', font_scale=1.1)
 
 # Fucntion to add width to spectral lines from comp chem data
 def spectrawidth(freq, intensity, peakwidth = 20, scalingfactor = 1):
