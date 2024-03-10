@@ -11,6 +11,11 @@ from matplotlib.lines import Line2D
 
 sns.set_context('poster', font_scale=1.1)
 
+!wget https://raw.githubusercontent.com/SciX-UNSW/D2D/main/ExoMol_Data.csv
+!wget https://raw.githubusercontent.com/SciX-UNSW/D2D/main/transit-spectrum-W39b-G395H-10pix_weighted-average.nc
+ExoMol_data = pd.read_csv("ExoMol_Data.csv")
+data_check = xr.open_dataset('transit-spectrum-W39b-G395H-10pix_weighted-average.nc')
+
 # Fucntion to add width to spectral lines from comp chem data
 def spectrawidth(freq, intensity, peakwidth = 20, scalingfactor = 1):
     minfreq = min(freq)- min(freq)*0.1
